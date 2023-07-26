@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth'
-import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
+import { environment } from '../../../environments/environment'
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Observable, pipe } from 'rxjs';
+import { map, catchError } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -8,18 +11,30 @@ import { Router } from '@angular/router';
 export class UserService {
 
   constructor(
-    private auth: Auth
+    private httpClient: HttpClient,
+    private authService: AuthService
   ) { }
 
-  register(email: string, password: string){
-    return createUserWithEmailAndPassword(this.auth, email, password)
+  private getHttpSettings() {
+    const httpSettings = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return httpSettings;
   }
 
-  login(email: string, password: string){
-    return signInWithEmailAndPassword(this.auth, email, password)
+  private handleError(error: Response) {
+    console.log(error)
+    return error
   }
 
-  logout(){
-    return signOut(this.auth)
+  public register(userData: object) {
+    const httpSettings = this.getHttpSettings();
+    return this.httpClient.post<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}/users`, userData, httpSettings);
+  }
+
+  public getMyMessages(userId: string) {
+    //return this.httpClient.get(`${environment.S_CORE_SERVICE_API_BASE_URL}/messages/getByUser/${userId}`, this.getHTTPOptions());
   }
 }

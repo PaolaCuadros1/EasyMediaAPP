@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { HttpParams } from '@angular/common/http'
 
 @Component({
   selector: 'app-register',
@@ -11,12 +13,13 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   constructor(
+    private authService: AuthService,
     private userService: UserService,
     private route: Router
   ) { }
 
   formRegister = new FormGroup({
-    fullName: new FormControl('', Validators.required),
+    userName: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required),
@@ -25,17 +28,36 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register() {
+  async register() {
     if (this.formRegister.valid) {
-      this.userService.register(this.formRegister.value.email, this.formRegister.value.password)
+      await this.authService.register(this.formRegister.value.email, this.formRegister.value.password)
         .then(response => {
-          this.route.navigate(['/login'])
+          response.user.getIdToken().then(token => {
+            this.authService.saveToken(token)
+          })
+          this.saveData(response.user.email as string, response.user.uid as string)
         })
         .catch(error => { console.error('Error --> ', error) })
     } else {
       console.log('error')
     }
-
   }
 
+  saveData(email: string, uid: string) {
+    let data22 = {
+      userName: this.formRegister.value.userName,
+      email: email,
+      uid: uid
+    }
+    this.userService.register(data22).subscribe(
+      response => {
+        console.log('response --- ', response)
+        if (response.status) {
+          this.route.navigate(['/login'])
+        } else {
+          console.log('El suaurio se encuentra registrado')
+        }
+      }
+    )
+  }
 }

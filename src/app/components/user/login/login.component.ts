@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-import { UserService } from '../user.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private userService: UserService
+    private authService: AuthService,
+    private route: Router
   ) { }
 
   formLogin = new FormGroup({
@@ -22,8 +24,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.userService.login(this.formLogin.value.email, this.formLogin.value.password)
-    .then()
+    this.authService.login(this.formLogin.value.email, this.formLogin.value.password)
+    .then( () => {
+      this.route.navigate(['/message'])
+    } )
     .catch( error => { console.error('Error ', error) } )
   }
 
