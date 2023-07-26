@@ -1,1 +1,38 @@
-<p>messages works!</p>
+<main class="container-wrapper mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="card bg-primary " style="background-color: transparent;">
+        <div class="card-title text-center">
+          <h1 class="text-center">My Publications</h1>
+        </div>
+        <div class="card-body">
+          <div class="col-12" >
+            <div class="form-group">
+              <label for="dateSelect">Date Select</label>
+              <input type="date" class="form-control text-black" id="dateSelect" placeholder="Select a date">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 m-2" *ngFor="let message of myMessage" >
+                <div class="card">
+                  <div class="card-title m-0 bg-secondary">
+                    <h2> {{message.title}} </h2>
+                  </div>
+                  <div class="card-body bg-dark">
+                    <p> {{message.message}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
