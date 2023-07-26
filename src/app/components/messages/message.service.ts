@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class MessageService {
 
   constructor(
     private httpClient: HttpClient,
@@ -22,17 +22,8 @@ export class UserService {
     return httpSettings;
   }
 
-  private handleError(error: Response) {
-    console.log(error)
-    return error
-  }
-
-  public register(userData: object) {
-    const httpSettings = this.getHttpSettings();
-    return this.httpClient.post<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}/users`, userData, httpSettings);
-  }
-
   public getMyMessages(userId: string) {
-    //return this.httpClient.get(`${environment.S_CORE_SERVICE_API_BASE_URL}/messages/getByUser/${userId}`, this.getHTTPOptions());
+    const httpSettings = this.getHttpSettings();
+    return this.httpClient.get(`${environment.S_CORE_SERVICE_API_BASE_URL}/messages/${userId}`, httpSettings);
   }
 }
