@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "easymedia-3fb6e": {
+      "hosting": {
+        "EasyMedia": [
+          "app-easy"
+        ]
+      }
+    },
+    "app-easy-media": {
+      "hosting": {
+        "EasyMedia": [
+          "app-easy-media"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "easymedia-3fb6e"
+  }
+}

@@ -1,0 +1,32 @@
+<main class="container-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="mt-5 d-md-flex align-items-center justify-content-center">
+        <div class="card bg-primary " style="background-color: transparent;">
+          <div class="card-title text-center">
+            <img src="/assets/images/icon.png" class="card-img-top" alt="Easy Media" style="width: 80%;">
+          </div>
+          <div class="card-body">
+            <h1 class="card-title text-center mb-0">Easy Media</h1>
+            <h3 class="card-title text-center text-info mt-0 mb-1">Now, share is easy</h3>
+            <h3 class="card-title text-center mt-0">Sing Up</h3>
+            <form [formGroup]="formLogin" (submit)="login()" >
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" formControlName="email" class="form-control easy-input" id="email" placeholder="Email">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" formControlName="password" class="form-control easy-input" id="password" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-primary">SIGN IN</button>
+            </form>
+            <div class="d-flex justify-content-end">
+              <small>Don't have an account? <a routerLink="/register">Sing up here</a> </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,35 @@
+@import "vendor/custom_bootstrap";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+$main-color: #8973D8 !important;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+// body{
+//   background-color: #262626 !important;
+// }
+
+// .container {
+//   position: fixed;
+//   top: 50%;
+//   left: 50%;
+//   -webkit-transform: translate(-50%, -50%);
+//   transform: translate(-50%, -50%);
+// }
+
+// .form-card{
+//   background-color: $main-color;
+// }
+
+.easy-input{
+  background-color: $main-color;
+  border-top: 0px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+  border-radius: 0px !important;
+}

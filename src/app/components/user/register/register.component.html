@@ -1,0 +1,44 @@
+<main class="container-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="body d-md-flex align-items-center justify-content-center">
+        <div class="card bg-primary " style="background-color: transparent;">
+          <div class="card-title text-center">
+            <img src="/assets/images/icon.png" class="card-img-top" alt="Easy Media" style="width: 80%;">
+          </div>
+          <div class="card-body">
+            <h1 class="card-title text-center mb-0">Easy Media</h1>
+            <h3 class="card-title text-center text-info mt-0 mb-1">Now, share is easy</h3>
+            <h3 class="card-title text-center mt-0">Sing Up</h3>
+            <form [formGroup]="formRegister" class="needs-validation" novalidate (submit)="register()" >
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" formControlName="fullName" class="form-control easy-input" id="fullName"
+                  placeholder="Full Name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" formControlName="email" class="form-control easy-input" id="email"
+                  placeholder="Email" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" formControlName="password" class="form-control easy-input" id="password"
+                  placeholder="Password" required>
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" formControlName="confirmPassword" class="form-control easy-input"
+                  id="confirmPassword" placeholder="Confirm Password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">SIGN UP</button>
+            </form>
+            <div class="d-flex justify-content-end">
+              <small>Already have an account? <a routerLink="/login">Login</a> </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
