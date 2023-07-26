@@ -4,29 +4,31 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app'
 import { provideAuth, getAuth } from '@angular/fire/auth'
 import { environment } from '../environments/environment'
 import { ReactiveFormsModule } from '@angular/forms'
+import { FirestoreModule } from '@angular/fire/firestore'
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreateMessageComponent } from './components/messages/create/create.component';
+import { MessagesComponent } from './components/messages/messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    CreateMessageComponent
+    CreateMessageComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,8 @@ import { CreateMessageComponent } from './components/messages/create/create.comp
     BrowserAnimationsModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    FirestoreModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth( () => getAuth() )
   ],

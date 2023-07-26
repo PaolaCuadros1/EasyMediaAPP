@@ -11,7 +11,8 @@ export const environment = {
     storageBucket: "easymedia-3fb6e.appspot.com",
     messagingSenderId: "75319777191",
     appId: "1:75319777191:web:482d93a7843926589d4882"
-  }
+  },
+  S_CORE_SERVICE_API_BASE_URL: 'http://localhost:2500'
 };
 
 /*
