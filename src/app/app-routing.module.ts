@@ -10,11 +10,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/message' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  {
-    path: 'message', component: MessagesComponent, ...canActivate(() => redirectUnauthorizedTo(['/register'])), children: [
-      { path: 'create', component: CreateMessageComponent }
-    ]
-  }
+  { path: 'message', component: MessagesComponent, ...canActivate(() => redirectUnauthorizedTo(['/register'])) },
+  { path: 'create-post', component: CreateMessageComponent, ...canActivate(() => redirectUnauthorizedTo(['/register'])) }
 ];
 
 @NgModule({

@@ -32,7 +32,8 @@ export class UserService {
     return this.httpClient.post<any>(`${environment.S_CORE_SERVICE_API_BASE_URL}/users`, userData, httpSettings);
   }
 
-  public getMyMessages(userId: string) {
-    //return this.httpClient.get(`${environment.S_CORE_SERVICE_API_BASE_URL}/messages/getByUser/${userId}`, this.getHTTPOptions());
+  public getById(userId: string) {
+    const httpSettings = this.getHttpSettings();
+    return this.httpClient.get(`${environment.S_CORE_SERVICE_API_BASE_URL}/users/${userId}`, httpSettings);
   }
 }

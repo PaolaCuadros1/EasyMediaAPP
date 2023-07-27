@@ -44,14 +44,13 @@ export class RegisterComponent implements OnInit {
   }
 
   saveData(email: string, uid: string) {
-    let data22 = {
+    let data = {
       userName: this.formRegister.value.userName,
       email: email,
       uid: uid
     }
-    this.userService.register(data22).subscribe(
+    this.userService.register(data).subscribe(
       response => {
-        console.log('response --- ', response)
         if (response.status) {
           this.route.navigate(['/login'])
         } else {
