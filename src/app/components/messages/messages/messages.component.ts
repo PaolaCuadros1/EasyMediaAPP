@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
-import { map } from 'rxjs';
 declare var require: any
 const { DateTime } = require("luxon");
 
@@ -11,8 +10,8 @@ const { DateTime } = require("luxon");
 })
 export class MessagesComponent implements OnInit {
 
-  public messages: any = []
-  public dateSelect: string = ''
+  messages: any = []
+  dateSelect: string = ''
   constructor(
     private messageService: MessageService
   ) { }

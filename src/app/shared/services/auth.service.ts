@@ -31,4 +31,18 @@ export class AuthService {
   getToken(){
     return localStorage.getItem('token')
   }
+
+  saveUserData(user: any){
+    localStorage.setItem('userName', user.userName)
+    localStorage.setItem('uid', user.uid)
+    localStorage.setItem('email', user.email)
+  }
+
+  getUserName(){
+    return localStorage.getItem('userName')
+  }
+
+  getUserId(){
+    return localStorage.getItem('uid')
+  }
 }

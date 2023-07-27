@@ -1,6 +1,33 @@
-<nav class="navbar bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand">Navbar</a>
+<nav class="navbar bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
+      Easy Media
+    </a>
+
+    <div id="menu" class="header-floating-menu">
+      <button type="button" class="btn btn-link header-floating-menu__toggle" (click)="toggleMenu()"><span class="material-icons">{{ toggleOpen ? 'close' : 'menu' }}</span></button>
+
+      <div class="header-floating-menu__content bg-light text-dark shadow" [ngClass]="toggleOpen ? 'open' : ''">
+        <h3 class="mb-0" id="userName">Paola Cuadros</h3>
+
+        <hr/>
+
+        <ul>
+          <li>
+            <a routerLink="create-post">Create Publication</a>
+          </li>
+          <li>
+            <a routerLink="my-publications">My Publication</a>
+          </li>
+          <li>
+            <a routerLink="publications">All Publication</a>
+          </li>
+          <li>
+            <button type="button" class="btn btn-link" (click)="logout()">Log Out</button>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <a (click)="logout()" >Cerrar sesión</a>
 </nav>
