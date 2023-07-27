@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           this.authService.saveUserData(response)
         }
       )
-      this.route.navigate(['/message'])
+      this.route.navigate(['/my-posts'])
     } )
     .catch( error => { console.error('Error ', error) } )
   }

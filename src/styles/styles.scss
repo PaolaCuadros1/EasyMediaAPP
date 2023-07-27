@@ -10,21 +10,10 @@ $main-color: #8973D8 !important;
   font-family: "Poppins", sans-serif;
 }
 
-// body{
-//   background-color: #262626 !important;
-// }
-
-// .container {
-//   position: fixed;
-//   top: 50%;
-//   left: 50%;
-//   -webkit-transform: translate(-50%, -50%);
-//   transform: translate(-50%, -50%);
-// }
-
-// .form-card{
-//   background-color: $main-color;
-// }
+.btn-primary-easy{
+  background: linear-gradient(to right, #C645A9, #58BBDB);
+  color: white;
+}
 
 .easy-input{
   background-color: $main-color;
@@ -32,4 +21,14 @@ $main-color: #8973D8 !important;
   border-left: 0px !important;
   border-right: 0px !important;
   border-radius: 0px !important;
+}
+
+.display-title-error, .display-message-error{
+  color: red;
+  display: block;
+}
+
+.hide-title-error, .hide-message-error{
+  color: red;
+  display: none;
 }

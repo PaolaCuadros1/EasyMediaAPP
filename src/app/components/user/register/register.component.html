@@ -8,8 +8,8 @@
           </div>
           <div class="card-body">
             <h1 class="card-title text-center mb-0">Easy Media</h1>
-            <h3 class="card-title text-center text-info mt-0 mb-1">Now, share is easy</h3>
-            <h3 class="card-title text-center mt-0">Sing Up</h3>
+            <p class="card-title text-center text-secondary mt-0 mb-1">Now, share is easy</p>
+            <h4 class="card-title text-center mt-0">Sing Up</h4>
             <form [formGroup]="formRegister" class="needs-validation" novalidate (submit)="register()" >
               <div class="mb-3">
                 <label for="userName" class="form-label">Full Name</label>
@@ -34,7 +34,7 @@
               <button type="submit" class="btn btn-primary">SIGN UP</button>
             </form>
             <div class="d-flex justify-content-end">
-              <small>Already have an account? <a routerLink="/login">Login</a> </small>
+              <small>Already have an account? <a routerLink="/login" class="text-secondary">Login</a> </small>
             </div>
           </div>
         </div>
