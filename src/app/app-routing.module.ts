@@ -7,10 +7,10 @@ import { MessagesComponent } from './components/messages/messages/messages.compo
 import { CreateMessageComponent } from './components/messages/create/create.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/message' },
+  { path: '', pathMatch: 'full', redirectTo: '/my-posts' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'message', component: MessagesComponent, ...canActivate(() => redirectUnauthorizedTo(['/register'])) },
+  { path: 'my-posts', component: MessagesComponent, ...canActivate(() => redirectUnauthorizedTo(['/register'])) },
   { path: 'create-post', component: CreateMessageComponent, ...canActivate(() => redirectUnauthorizedTo(['/register'])) }
 ];
 

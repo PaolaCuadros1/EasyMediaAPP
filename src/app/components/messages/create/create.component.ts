@@ -49,7 +49,7 @@ export class CreateMessageComponent implements OnInit {
             icon: 'success'
           }).then(
             () =>{
-              this.route.navigate(['/message'])
+              this.route.navigate(['/my-posts'])
             }
           )
         },

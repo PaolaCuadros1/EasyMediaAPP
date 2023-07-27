@@ -9,6 +9,7 @@ import { Router } from '@angular/router'
 })
 export class HeaderComponent implements OnInit {
   toggleOpen: boolean = false
+  printMenu: boolean = true
   userName: string | null = ''
   constructor(
     private authService: AuthService,
@@ -17,18 +18,21 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.userName = this.authService.getUserName()
+    console.log('this.userName --- ', this.userName)
   }
 
   toggleMenu() {
     this.toggleOpen = !this.toggleOpen
   }
 
-  logout(){
+  logout() {
     this.authService.logout()
-    .then(()=> {
-      this.route.navigate(['/login'])
-    })
-    .catch()
+      .then(() => {
+        localStorage.clear()
+        this.printMenu = false
+        this.route.navigate(['/login'])
+      })
+      .catch()
   }
 
 }
