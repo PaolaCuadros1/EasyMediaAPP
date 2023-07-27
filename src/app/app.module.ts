@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app'
 import { provideAuth, getAuth } from '@angular/fire/auth'
 import { environment } from '../environments/environment'
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { FirestoreModule } from '@angular/fire/firestore'
 import { HttpClientModule } from '@angular/common/http'
 
@@ -35,6 +35,7 @@ import { MessagesComponent } from './components/messages/messages/messages.compo
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    FormsModule,
     ReactiveFormsModule,
     FirestoreModule,
     HttpClientModule,
