@@ -4,6 +4,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { MessageService } from '../message.service';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
+declare var require: any
+const { DateTime } = require("luxon");
 
 @Component({
   selector: 'app-create-message',
@@ -14,6 +16,10 @@ export class CreateMessageComponent implements OnInit {
 
   title = 'Your post title'
   startMessage = 'Create a message for share with your friends.'
+  userName: any = ''
+  errorText: string = 'hide-title-error'
+  errorMessage: string = 'hide-message-error'
+  currentDate = DateTime.fromISO(DateTime.now().toString()).toFormat('t dd/MM/yyyy')
   constructor(
     private authService: AuthService,
     private messageService: MessageService,
@@ -21,12 +27,12 @@ export class CreateMessageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.getCurrentUser()
   }
 
   formCreate = new FormGroup({
-    text: new FormControl('Your post title', Validators.required),
-    message: new FormControl('Create a message for share with your friends.', Validators.required)
+    text: new FormControl('', Validators.required),
+    message: new FormControl('', Validators.required)
   })
 
   create(){
@@ -46,12 +52,22 @@ export class CreateMessageComponent implements OnInit {
               this.route.navigate(['/message'])
             }
           )
-          //console.log('response --- ', response.messageId)
+        },
+        error => {
+          Swal.fire({
+            title: 'Uppss Try Later',
+            icon: 'error'
+          })
         }
       )
     }else{
-
+      this.errorText = this.formCreate.controls['text'].status == 'INVALID' ? 'display-title-error' : 'hide-title-error'
+      this.errorMessage = this.formCreate.controls['message'].status == 'INVALID' ? 'display-message-error' : 'hide-message-error'
     }
+  }
+
+  getCurrentUser(){
+    this.userName = this.authService.getUserName()
   }
 
 }
