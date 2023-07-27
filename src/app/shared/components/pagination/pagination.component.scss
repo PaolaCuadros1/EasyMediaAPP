@@ -1,0 +1,7 @@
+.page-item {
+  &.current-page {
+    .page-link {
+      font-weight: 700;
+    }
+  }
+}

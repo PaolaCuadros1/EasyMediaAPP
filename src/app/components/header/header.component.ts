@@ -1,4 +1,5 @@
 import { AuthService } from 'src/app/shared/services/auth.service'
+
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 
@@ -23,6 +24,10 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu() {
     this.toggleOpen = !this.toggleOpen
+  }
+
+  closeMenu() {
+    this.toggleOpen = false
   }
 
   logout() {

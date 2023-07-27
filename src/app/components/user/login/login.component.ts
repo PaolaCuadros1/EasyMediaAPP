@@ -30,8 +30,6 @@ export class LoginComponent implements OnInit {
     .then( (response) => {
       this.userService.getById(response.user.uid).subscribe(
         (response: any) => {
-          let userName = <HTMLInputElement>document.getElementById('userName')
-          userName.innerHTML = response.userName
           this.authService.saveUserData(response)
         }
       )
