@@ -1,0 +1,19 @@
+.card {
+  &.card-message {
+    min-height: 127px;
+
+    .card-body {
+      font-weight: 300;
+      font-size: 14px;
+
+      .card-message__date {
+        font-weight: 300;
+        font-size: 12px;
+      }
+
+      .card-message__user {
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,23 +1,24 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app'
-import { provideAuth, getAuth } from '@angular/fire/auth'
-import { environment } from '../environments/environment'
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'
-import { FirestoreModule } from '@angular/fire/firestore'
 import { HttpClientModule } from '@angular/common/http'
+import { NgModule } from '@angular/core'
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app'
+import { getAuth, provideAuth } from '@angular/fire/auth'
+import { FirestoreModule } from '@angular/fire/firestore'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { LoginComponent } from './components/user/login/login.component';
-import { RegisterComponent } from './components/user/register/register.component';
-import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { CreateMessageComponent } from './components/messages/create/create.component';
-import { MessagesComponent } from './components/messages/messages/messages.component';
+import { environment } from '../environments/environment'
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './app.component'
+import { FooterComponent } from './components/footer/footer.component'
+import { HeaderComponent } from './components/header/header.component'
+import { HomeComponent } from './components/home/home.component'
+import { CreateMessageComponent } from './components/messages/create/create.component'
+import { MessagesComponent } from './components/messages/messages/messages.component'
+import { LoginComponent } from './components/user/login/login.component'
+import { RegisterComponent } from './components/user/register/register.component'
+import { SharedModule } from './shared/shared.module'
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MessagesComponent } from './components/messages/messages/messages.compo
     ReactiveFormsModule,
     FirestoreModule,
     HttpClientModule,
+    SharedModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth( () => getAuth() )
   ],

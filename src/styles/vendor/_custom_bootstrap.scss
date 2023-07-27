@@ -1,11 +1,62 @@
 @import "../../../node_modules/bootstrap/scss/mixins/banner";
-@include bsBanner("");
+@include bsBanner("Easy Media");
+
+// Fonts
+$font-family-sans-serif: 'Lato', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+// Colors
+$primary: #9B8ADB;
+$secondary: #48E3BE;
+$dark: #666666;
 
 $body-color: #fff;
-$dark: #666666;
-$primary: #8973D8;
-$secondary: #48E3BE;
-$info: teal;
+$body-bg: $primary;
+
+// Cards
+
+// scss-docs-start card-variables
+$card-spacer-y: 8px;
+$card-spacer-x: 16px;
+// $card-title-spacer-y:               $spacer * .5 !default;
+$card-title-color: #FFF;
+// $card-subtitle-color:               null !default;
+// $card-border-width:                 var(--#{$prefix}border-width) !default;
+$card-border-color: #5F5E5E;
+$card-border-radius: 16px;
+// $card-box-shadow:                   null !default;
+// $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
+// $card-cap-padding-y:                $card-spacer-y * .5 !default;
+// $card-cap-padding-x:                $card-spacer-x !default;
+// $card-cap-bg:                       rgba(var(--#{$prefix}body-color-rgb), .03) !default;
+// $card-cap-color:                    null !default;
+// $card-height:                       null !default;
+// $card-color:                        null !default;
+$card-bg: #5F5E5E;
+// $card-img-overlay-padding:          $spacer !default;
+// $card-group-margin:                 $grid-gutter-width * .5 !default;
+// scss-docs-end card-variables
+
+// Forms
+$form-label-color: #0E2248;
+$form-label-font-size: 15px;
+$form-label-font-weight: 700;
+
+// Inputs
+$input-bg: #FFF;
+$input-color: #474747;
+$input-border-color: #5F5E5E;
+$input-border-radius: 16px;
+
+// Buttons
+$btn-font-size: 20px;
+$btn-line-height: 24px;
+$btn-border-radius: 20px;
+
+
+// Pagination
+$pagination-font-size: 20px;
+$pagination-color: $dark;
+$pagination-border-width: 0;
 
 // scss-docs-start import-stack
 // Configuration

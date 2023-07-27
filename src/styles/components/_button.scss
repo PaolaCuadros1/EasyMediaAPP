@@ -1,0 +1,15 @@
+.btn {
+  &:not(.btn-link) {
+    text-transform: uppercase;
+  }
+
+  &.btn-bipolar {
+    background: linear-gradient(270deg, #C645A9 0%, #58BBDB 100%);
+    color: white;
+    border: none;
+
+    &:hover {
+      background: linear-gradient(90deg, #C645A9 0%, #58BBDB 100%);
+    }
+  }
+}

@@ -1,15 +1,16 @@
 <nav class="navbar bg-light">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="/assets/images/icon.png" alt="Bootstrap" width="70" height="70">
+      <!-- <img src="images/" alt="Bootstrap" width="30" height="24"> -->
+      <img src="assets/images/logo-black.png" alt="" />
       Easy Media
     </a>
 
-    <div id="menu" *ngIf="printMenu" class="header-floating-menu">
+    <div class="header-floating-menu">
       <button type="button" class="btn btn-link header-floating-menu__toggle" (click)="toggleMenu()"><span class="material-icons">{{ toggleOpen ? 'close' : 'menu' }}</span></button>
 
-      <div class="header-floating-menu__content bg-light text-dark shadow" [ngClass]="toggleOpen ? 'open' : ''">
-        <h3 class="mb-0" id="userName">Paola Cuadros</h3>
+      <div class="header-floating-menu__content bg-light text-dark shadow" [ngClass]="toggleOpen ? 'open' : ''" (click)="closeMenu()">
+        <h3 class="mb-0">Paola Cuadros</h3>
 
         <hr/>
 

@@ -1,14 +1,19 @@
+// Vendor
 @import "vendor/custom_bootstrap";
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+// Components
+@import "components/card";
+@import "components/button";
+
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 $main-color: #8973D8 !important;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   font-family: "Lato", sans-serif;
+// }
 
 .btn-primary-easy{
   background: linear-gradient(to right, #C645A9, #58BBDB);
